@@ -8,8 +8,8 @@ import {
   decryptMessage,
 } from "../utils/crypto";
 
-const SERVER_URL = "http://localhost:3001";
-
+const socket = io(
+  import.meta.env.VITE_BACKEND_URL || "http://localhost:3001");
 export function useSocket(username) {
   const socketRef = useRef(null);
   const keyPairRef = useRef(null); // { publicKey, privateKey }
